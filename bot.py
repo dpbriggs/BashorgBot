@@ -89,7 +89,11 @@ class BashOrgBot(object):
         quotetext = textwrap.wrap(quote, 100)[0]+'...'
         
         title = "%s %s (%s)" % (refnum, quotetext, upvotes)
-        
+        ##I haven't yet added the code to submit, I've done that in a terminal
+        ##This is what it would look like:
+        #r.submit('BashDotOrg', 'test post 3 please ignore', url='http://bash.org/?400459', raise_captcha_exception=True)
+        #
+        ##Which has only raised the: "Would you like to try that again?" error
     def hi(self):
         print('hi')
 BashOrgBot()
