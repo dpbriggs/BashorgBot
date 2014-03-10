@@ -5,6 +5,8 @@ import http.client
 import html.parser
 from time import sleep
 from random import randint
+##I would like to thank /u/umbrae for his help and his source code for
+## his bot on /u/serendipity
 
 class BashOrgBot(object):
     def __init__(self):
