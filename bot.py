@@ -3,9 +3,6 @@ import configparser
 import textwrap
 import http.client
 import html.parser
-user_agent = 'A bot that submits the latest quotes from BashDotOrg, created by /u/Davess1'
-login_user = 'BashDotOrgBot'
-login_pass = 'kepler889'
 
 
 class BashOrgBot(object):
