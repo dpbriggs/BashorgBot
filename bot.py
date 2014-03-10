@@ -1,6 +1,6 @@
 import praw
 import configparser
-
+import textwrap
 import http.client
 import html.parser
 user_agent = 'A bot that submits the latest quotes from BashDotOrg, created by /u/Davess1'
@@ -71,7 +71,7 @@ class BashOrgBot(object):
         for i in range(0, len(data)):
             holdquote = sortquote(data[i], '</a></p><p class="qt">', -5)
             holdquote = h.unescape(holdquote) #convert HTML parts to special characters
-            holdquote = holdquote.replace('<br />', '')
+            holdquote = holdquote.replace('<br />', '\n  ')
 
             #Get reference numbers
             holdref = sortrest(data[i], '<b>', '</b>')
@@ -85,12 +85,14 @@ class BashOrgBot(object):
         return quotes                  
     
     
-    def submit_post(self):
-        title = ""
-
+    def submit_post(self, quote, refnum, upvotes):
+        quotetext = textwrap.wrap(quote, 100)[0]+'...'
+        
+        title = "%s %s (%s)" % (refnum, quotetext, upvotes)
+        
     def hi(self):
         print('hi')
-BashOrgBot().hi()
+BashOrgBot()
 
     
 
